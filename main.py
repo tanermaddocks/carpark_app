@@ -1,4 +1,4 @@
-print ("Welcome to the Carpack Application.\n")
+print(f"{Fore.yellow}{Back.red}Welcome to the Carpark Application!!!{Style.reset}\n")
 
 def create_menu ():
     print ("Enter 1 to add a parking slot.")
@@ -15,5 +15,22 @@ def create_menu ():
 choice = ""
 while choice != "7" :
     choice = create_menu()
+    match choice:
+        case "1":
+            print ("Add slot")
+        case "2":
+            print ("Delete slot")
+        case "3":
+            print ("List slots")
+        case "4":
+            print ("Park car")
+        case "5":
+            print ("Find car")
+        case "6":
+            print ("Exit carpark")
+        case "7":
+            print ("Exit application")
+        case _:
+            print ("Invalid choice")
 
 print ("Thank you for using the Carpark Application.")
