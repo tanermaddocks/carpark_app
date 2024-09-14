@@ -8,3 +8,11 @@ def add_slot(carpark):
     #add that instance to the carpark
     carpark.add_slot(parking_slot)
     print("Parking Slot Added")
+
+def list_slots(carpark):
+    all_slots = carpark.get_slots()
+    print("\nListing slots...")
+    if not all_slots:
+        print ("No slots found.")
+    for slot in all_slots:
+        print (slot)

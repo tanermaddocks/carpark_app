@@ -5,3 +5,6 @@ class Carpark:
 
     def add_slot(self, slot):
         self.slots.append(slot)
+
+    def get_slots(self):
+        return self.slots
