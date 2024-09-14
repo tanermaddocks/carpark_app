@@ -1,7 +1,7 @@
 from colored import Fore, Back, Style
 from classes.carpark import Carpark
 from functions.carpark_functions import add_slot, delete_slot, list_slots, park_car
-from functions.file_functions import save_and_exit
+from functions.file_functions import save_and_exit, load_from_file
 
 print(f"{Fore.yellow}{Back.red}Welcome to the Carpark Application!!!{Style.reset}")
 
@@ -17,8 +17,11 @@ def create_menu ():
     choice = input ("Enter your choice: ")
     return choice
 
-carpark = Carpark("Carparker")
 choice = ""
+
+carpark = Carpark("Carparker")
+
+load_from_file(carpark)
 
 while choice != "7" :
     choice = create_menu()
@@ -37,8 +40,7 @@ while choice != "7" :
             print ("Exit carpark")
         case "7":
             save_and_exit(carpark)
-            print ("Exit application")
         case _:
             print ("Invalid choice")
 
-print ("Thank you for using the Carpark Application.")
+print ("\nThank you for using the Carpark Application.")
